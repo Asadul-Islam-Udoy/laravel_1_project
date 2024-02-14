@@ -51,6 +51,14 @@ class GroupVideoController extends Controller
         ],200);
     }
  }
+
+
+
+}
+
+
+
+
 //  public function update_video(Request $request, $id){
 //     $video = Video::find($id);
 //     $videoFile = GroupVieoFile::where('video_id',$id)->get();
@@ -87,4 +95,3 @@ class GroupVideoController extends Controller
 //            'videos'=>$videos
 //       ]);
 //     }
-}

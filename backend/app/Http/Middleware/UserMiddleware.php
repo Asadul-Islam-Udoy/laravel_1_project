@@ -22,7 +22,7 @@ class UserMiddleware
         try{
         $token = JWTAuth::getToken();     
         $user = JWTAuth::toUser($token);
-        if($user->role !== 'user'){
+        if($user->role !== 'superuser'){
           return response([
             'success'=>false,
             'message'=>'you are not superuser!'

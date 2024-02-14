@@ -9,5 +9,5 @@ class GroupVieoFile extends Model
 {
     use HasFactory;
     use HasUuids;
-    protected $fillable =['user_id','video_id','videos'];
+    protected $fillable =['user_id','video_id','group_id','videos'];
 }

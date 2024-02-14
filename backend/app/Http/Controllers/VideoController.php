@@ -107,11 +107,38 @@ public function update_video(Request $request, $id){
      ]);
  }
 
-//  public function test_db(Request $request){
-//    $ar = array('a','c','d','d','a','f');
-//    $result = array_count_values($ar);
-//    return($result);
-//  }
+
+ public function group_video_create(Request $request){
+   $vides = Video::create([
+       'user_id'=>Auth::id(),
+       'title'=>$request->title,
+       'groupname'=>$request->groupname,
+       'description'=>$request->description
+   ]) ;
+   if($vides)  {
+     if($request->has('video')){
+        $file = $request->file('video');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->move(public_path('/videos'),$filename);
+        GroupVieoFile::create([
+           'user_id'=>Auth::id(),
+           'video_id'=>$vides->id ,
+           'group_id'=>$request->group_id,
+           'videos'=>$filename
+        ]);
+     }
+     return response([
+        'success'=>true,
+        'message'=>'group videos create successfully!'
+     ],200);
+   } 
+   else{
+    return response([
+        'success'=>false,
+        'message'=>'group videos create fails!'
+     ],400);
+   } 
+ }
 }
 
 

@@ -37,6 +37,7 @@ Route::post('/permission/user/{id}',[App\Http\Controllers\UserController::class,
 Route::post('/permission/user/role/{id}',[App\Http\Controllers\UserController::class,'role_permision']);
 Route::post('/create/groups',[App\Http\Controllers\GroupVideoController::class,'create_group_name']);
 Route::get('/get/groups',[App\Http\Controllers\GroupVideoController::class,'get__groups_name']);
+Route::post('/create/videos/groups',[App\Http\Controllers\VideoController::class,'group_video_create']);
 });
 
 
