@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.3.1" }
+        "api/index.php": { "runtime": "vercel-php@0.23.0" }
     },
     "routes": [{
         "src": "/(.*)",
@@ -10,7 +10,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://bot.laravel-livewire.com",
+        "APP_URL": "https://laravel-vercel.vercel.app/",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -22,5 +22,6 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "array"
-    }
+    },
+    "outputDirectory":"public"
 }
